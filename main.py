@@ -1,10 +1,11 @@
+import os
 import json
 import requests
 from twilio.rest import Client
 
 # An api key is emailed to you when you sign up to a plan
 # Get a free API key at https://api.the-odds-api.com/
-API_KEY = "todo: import via github secrets"
+API_KEY = os.environ["ODDS_API_KEY"]
 
 def team_name_to_abbr(full_name):
     if full_name == "Kansas City Chiefs":
@@ -146,13 +147,13 @@ else:
         print(away, "@", home, "({:.2f})".format(avg_spread), "=>", pick)
 
     # Your Account SID from twilio.com/console
-    account_sid = "todo: import via github secrets"
+    account_sid = os.environ["TWILIO_ACCOUNT_SID"]
     # Your Auth Token from twilio.com/console
-    auth_token = "todo: import via github secrets"
+    auth_token = os.environ["TWILIO_AUTH_TOKEN"]
 
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-        to="todo: import via github secrets",
-        from_="todo: import via github secrets",
+        to=os.environ["MY_SMS_NUMBER"],
+        from_=os.environ["TWILIO_SMS_NUMBER"],
         body=matchups)
