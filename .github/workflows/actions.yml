@@ -1,0 +1,32 @@
+name: run main.py
+
+on:
+  schedule:
+    - cron: '45 1 * * 6' # At 00:00 on Monday
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9' # install the python version needed
+          
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: execute py script # run main.py
+        env:
+          MY_SMS_NUMBER: ${{ secrets.MY_SMS_NUMBER }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_SMS_NUMBER: ${{ secrets.TWILIO_SMS_NUMBER }}
+        run: python main.py
