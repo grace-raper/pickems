@@ -32,4 +32,5 @@ jobs:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           TWILIO_SMS_NUMBER: ${{ secrets.TWILIO_SMS_NUMBER }}
-        run: python main.py
+        if:  env.ODDS_API_KEY == ""
+        run: echo "odds api key is empty!"
