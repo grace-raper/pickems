@@ -5,8 +5,7 @@ from twilio.rest import Client
 
 # An api key is emailed to you when you sign up to a plan
 # Get a free API key at https://api.the-odds-api.com/
-API_KEY = os.environ["ODDS_API_KEY"]
-print(API_KEY) 
+API_KEY = os.environ("ODDS_API_KEY")
 
 def team_name_to_abbr(full_name):
     if full_name == "Kansas City Chiefs":
