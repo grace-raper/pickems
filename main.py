@@ -128,7 +128,7 @@ else:
         away = team_name_to_abbr(odds[game]['away_team'])
         avg_spread = 0
         commence = datetime.datetime.strptime(odds[game]["commence_time"], '%Y-%m-%dT%H:%M:%SZ') - datetime.timedelta(
-            hours=7)
+            hours=4)
         current = datetime.datetime.now()
         if current < commence:
             for bmkr in range (0, len(odds[game]['bookmakers'])):
