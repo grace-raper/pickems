@@ -1,11 +1,11 @@
-import os
 import json
 import requests
 from twilio.rest import Client
+import datetime
 
 # An api key is emailed to you when you sign up to a plan
 # Get a free API key at https://api.the-odds-api.com/
-API_KEY = os.environ["ODDS_API_KEY"]
+API_KEY = "***REMOVED***"
 
 def team_name_to_abbr(full_name):
     if full_name == "Kansas City Chiefs":
@@ -127,33 +127,35 @@ else:
         home = team_name_to_abbr(odds[game]['home_team'])
         away = team_name_to_abbr(odds[game]['away_team'])
         avg_spread = 0
-        for bmkr in range (0, len(odds[game]['bookmakers'])):
-            # check the team names to determine home team index
-            if home == team_name_to_abbr(odds[game]['bookmakers'][bmkr]['markets'][0]['outcomes'][0]['name']):
-                index = 0
+        commence = datetime.datetime.strptime(odds[game]["commence_time"], '%Y-%m-%dT%H:%M:%SZ') - datetime.timedelta(
+            hours=7)
+        current = datetime.datetime.now()
+        if current < commence:
+            for bmkr in range (0, len(odds[game]['bookmakers'])):
+                # check the team names to determine home team index
+                if home == team_name_to_abbr(odds[game]['bookmakers'][bmkr]['markets'][0]['outcomes'][0]['name']):
+                    index = 0
+                else:
+                    index = 1
+                avg_spread += odds[game]['bookmakers'][bmkr]['markets'][0]['outcomes'][index]['point']
+            avg_spread = avg_spread /  len(odds[game]['bookmakers'])
+            bt_spread = avg_spread + favor_bird_team(home) - favor_bird_team(away)
+            bt_grace_spread = bt_spread + favor_graces_teams(home) - favor_graces_teams(away)
+
+            if bt_grace_spread < 0.0:
+                pick = home
             else:
-                index = 1
-            avg_spread += odds[game]['bookmakers'][bmkr]['markets'][0]['outcomes'][index]['point']
-        avg_spread = avg_spread /  len(odds[game]['bookmakers'])
-        bt_spread = avg_spread + favor_bird_team(home) - favor_bird_team(away)
-        bt_grace_spread = bt_spread + favor_graces_teams(home) - favor_graces_teams(away)
+                pick = away
 
-        if bt_grace_spread < 0.0:
-            pick = home
-        else:
-            pick = away
+            matchups = matchups + away + " @ " + home + " ({:.2f})".format(avg_spread) + " => " + pick + "\n"
+            print(away, "@", home, "({:.2f})".format(avg_spread), "=>", pick)
 
-        matchups = matchups + away + " @ " + home + " ({:.2f})".format(avg_spread) + " => " + pick + "\n"
-        print(away, "@", home, "({:.2f})".format(avg_spread), "=>", pick)
-
-    # Your Account SID from twilio.com/console
-    account_sid = os.environ["TWILIO_ACCOUNT_SID"]
-    # Your Auth Token from twilio.com/console
-    auth_token = os.environ["TWILIO_AUTH_TOKEN"]
+    account_sid = "***REMOVED***"
+    auth_token = "***REMOVED***"
 
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-        to=os.environ["MY_SMS_NUMBER"],
-        from_=os.environ["TWILIO_SMS_NUMBER"],
+        to="***REMOVED***",
+        from_="***REMOVED***",
         body=matchups)
