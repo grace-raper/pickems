@@ -4,7 +4,7 @@ Small python project that helps determine my football picks and (hopefully) win 
 ## my strategy:
 I've been playing pickems for the last couple years in a small family/friends leauge and usually do well the first couple weeks, then somewhere towards the middle of the season I get busy with work or school and forget to make my picks until halfway through the day Sunday. Making this mistake once or twice virtually guarantees defeat, so the most important (and most challenging) part of my pickems strategy has always been remembering to make my picks. That is why this project was designed to integrate with the Twilio SMS API to text my picks to me once they are generated. That way I can recieve a reminder every week and never forget to make my picks again!
 
-The strategy I use to decide games each week is fairly simple: I average the game odds from an array of bookmakers, and then apply some customized "favor" points to bird teams (i.e. Ravens, Falcons, Cardinals, Eagles, Seahawks) & some of my personal favorites (Saints, Steelers, Chargers, Vikings) in an attempt pick some of the weeks upsets.
+The strategy I use to decide games each week is fairly simple: I average the game odds from an array of bookmakers, and then apply some customized "favor" points to bird teams (i.e. Ravens, Falcons, Cardinals, Eagles, Seahawks) & personal favorites (Saints, Steelers, Chargers, Vikings) in an attempt pick some of the weeks upsets.
 
 ## tools used:
 
