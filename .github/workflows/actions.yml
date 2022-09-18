@@ -32,4 +32,4 @@ jobs:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           TWILIO_SMS_NUMBER: ${{ secrets.TWILIO_SMS_NUMBER }}
-        run: main.py
+        run: python main.py
