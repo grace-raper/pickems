@@ -81,7 +81,7 @@ def favor_bird_team(name):
         return 0.0
 
 def favor_graces_teams(name):
-    if name == "PIT" or name == "NO" or name == "LAC" or name == "SEA" or name == "MIN":
+    if name == "PIT" or name == "TEN" or name == "LAC" or name == "SEA" or name == "MIN":
         return -5.5
     else:
         return 0.0
