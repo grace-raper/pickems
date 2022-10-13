@@ -11,7 +11,10 @@ TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
 MY_SMS_NUMBER = os.environ.get("MY_SMS_NUMBER")
 TWILLO_SMS_NUMBER = os.environ.get("TWILLO_SMS_NUMBER")
-    
+
+println(os.environ)
+println(os.environ.get("ODDS_API_KEY"))
+
 def team_name_to_abbr(full_name):
     if full_name == "Kansas City Chiefs":
         return "KC"
