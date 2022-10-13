@@ -6,9 +6,12 @@ import os
 
 # An api key is emailed to you when you sign up to a plan
 # Get a free API key at https://api.the-odds-api.com/
-# API_KEY = "***REMOVED***"
-API_KEY = os.environ.get("ODDS_API_KEY")
-
+ODDS_API_KEY = os.environ.get("ODDS_API_KEY")
+TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
+MY_SMS_NUMBER = os.environ.get("MY_SMS_NUMBER")
+TWILLO_SMS_NUMBER = os.environ.get("TWILLO_SMS_NUMBER")
+    
 def team_name_to_abbr(full_name):
     if full_name == "Kansas City Chiefs":
         return "KC"
@@ -105,7 +108,7 @@ ODDS_FORMAT = 'decimal' # decimal | american
 DATE_FORMAT = 'iso' # iso | unix
 
 odds_response = requests.get(f'https://api.the-odds-api.com/v4/sports/{SPORT}/odds', params={
-    'api_key': API_KEY,
+    'api_key': ODDS_API_KEY,
     'regions': REGIONS,
     'markets': MARKETS,
     'oddsFormat': ODDS_FORMAT,
@@ -152,21 +155,8 @@ else:
             matchups = matchups + away + " @ " + home + " ({:.2f})".format(avg_spread) + " => " + pick + "\n"
             print(away, "@", home, "({:.2f})".format(avg_spread), "=>", pick)
 
-            
-    #account_sid = "***REMOVED***"
-    TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
-    #auth_token = "***REMOVED***"
-    TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
-    
-    #client = Client(account_sid,  auth_token)
     client = Client(TWILIO_ACCOUNT_SID,  TWILIO_AUTH_TOKEN)
-
-    MY_SMS_NUMBER = os.environ.get("MY_SMS_NUMBER")
-    TWILLO_SMS_NUMBER = os.environ.get("TWILLO_SMS_NUMBER")
-    
     message = client.messages.create(
         to=MY_SMS_NUMBER,
-        #to="***REMOVED***",
         from_=TWILLO_SMS_NUMBER,
-        #from_="***REMOVED***",
         body=matchups)
