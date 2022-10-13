@@ -10,7 +10,7 @@ ODDS_API_KEY = os.environ.get("ODDS_API_KEY")
 TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
 MY_SMS_NUMBER = os.environ.get("MY_SMS_NUMBER")
-TWILLO_SMS_NUMBER = os.environ.get("TWILLO_SMS_NUMBER")
+TWILIO_SMS_NUMBER = os.environ.get("TWILIO_SMS_NUMBER")
 
 def team_name_to_abbr(full_name):
     if full_name == "Kansas City Chiefs":
@@ -158,6 +158,5 @@ else:
     client = Client(TWILIO_ACCOUNT_SID,  TWILIO_AUTH_TOKEN)
     message = client.messages.create(
         to=MY_SMS_NUMBER,
-        #from_=TWILLO_SMS_NUMBER,
-        from_="***REMOVED***",
+        from_=TWILIO_SMS_NUMBER,
         body=matchups)
