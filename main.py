@@ -2,10 +2,12 @@ import json
 import requests
 from twilio.rest import Client
 import datetime
+import os
 
 # An api key is emailed to you when you sign up to a plan
 # Get a free API key at https://api.the-odds-api.com/
-API_KEY = "***REMOVED***"
+# API_KEY = "***REMOVED***"
+API_KEY = os.environ.get("ODDS_API_KEY")
 
 def team_name_to_abbr(full_name):
     if full_name == "Kansas City Chiefs":
@@ -150,12 +152,21 @@ else:
             matchups = matchups + away + " @ " + home + " ({:.2f})".format(avg_spread) + " => " + pick + "\n"
             print(away, "@", home, "({:.2f})".format(avg_spread), "=>", pick)
 
-    account_sid = "***REMOVED***"
-    auth_token = "***REMOVED***"
+            
+    #account_sid = "***REMOVED***"
+    TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
+    #auth_token = "***REMOVED***"
+    TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
+    
+    #client = Client(account_sid,  auth_token)
+    client = Client(TWILIO_ACCOUNT_SID,  TWILIO_AUTH_TOKEN)
 
-    client = Client(account_sid, auth_token)
-
+    MY_SMS_NUMBER = os.environ.get("MY_SMS_NUMBER")
+    TWILLO_SMS_NUMBER = os.environ.get("TWILLO_SMS_NUMBER")
+    
     message = client.messages.create(
-        to="***REMOVED***",
-        from_="***REMOVED***",
+        to=MY_SMS_NUMBER,
+        #to="***REMOVED***",
+        from_=TWILLO_SMS_NUMBER,
+        #from_="***REMOVED***",
         body=matchups)
