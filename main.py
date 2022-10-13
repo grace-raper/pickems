@@ -12,9 +12,6 @@ TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
 MY_SMS_NUMBER = os.environ.get("MY_SMS_NUMBER")
 TWILLO_SMS_NUMBER = os.environ.get("TWILLO_SMS_NUMBER")
 
-print(os.environ)
-print(os.environ.get("ODDS_API_KEY"))
-
 def team_name_to_abbr(full_name):
     if full_name == "Kansas City Chiefs":
         return "KC"
