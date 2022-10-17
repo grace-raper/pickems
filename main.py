@@ -81,13 +81,21 @@ def team_name_to_abbr(full_name):
 
 def favor_bird_team(name):
     if name == "BAL" or name == "ATL" or name == "ARI" or name == "PHI":
-        return -3.0
+        return -3.5
     else:
         return 0.0
 
 def favor_graces_teams(name):
-    if name == "PIT" or name == "TEN" or name == "LAC" or name == "SEA" or name == "MIN":
-        return -5.5
+    if name == "SEA":
+        return -7.5
+    if name == "MIN":
+        return -6.0
+    elif name == "PIT" or name == "TEN" or name == "LAC":
+        return -5.0
+    elif name == "NO": 
+        return -3.5
+    elif name == "MIA": 
+        return -1.5
     else:
         return 0.0
 
