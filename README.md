@@ -15,72 +15,20 @@ per month. This is more than enough for my purpose as I query data ~3 times a we
 
 * Finally in order to run my python script, I setup a simple [GitHub Actions workflow](https://docs.github.com/en/actions/using-workflows/about-workflows) that will be triggered on certain days (I run my script every Wednesday night, Sunday morning, and Monday afternoon). This of course required me to put my repo on Github so in order to keep my private info secure (i.e. API keys, phone number, etc.) I utilized [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) to store these values. When my workflow runs, it can retrieve these secrets from the workflow environment without revealing them to observers.
 
-## preformance for the 2022 season:
-
-### week 1:
+### 2022 season: 84-49-1
+### this week (week 9): 8-3
 | Game | Spread | My Pick | Result |
 | --- | --- | --- | --- |
-|Buffalo Bills at Los Angeles Rams | BUF -2.5 | LAR | BUF |
-|Cleveland Browns at Carolina Panthers | CAR -2.5 | CLE | CLE |
-|New England Patriots at Miami Dolphins	| MIA -3 | MIA | MIA |
-|Philadelphia Eagles at Detroit Lions	| PHI -4 | PHI | PHI |
-|Baltimore Ravens at New York Jets	| BAL -7	| BAL | BAL |
-|San Francisco 49ers at Chicago Bears	| SF -7	| SF | CHI |
-|Indianapolis Colts at Houston Texans	| IND -7	| IND | HOU |
-|Jacksonville Jaguars at Washington Commanders	| WAH -2.5	| WAS | WAS |
-|New Orleans Saints at Atlanta Falcons | NO -5.5	| NO | NO |
-|Pittsburgh Steelers at Cincinnati Bengals	| CIN -6.5	|CIN | PIT |
-|Kansas City Chiefs at Arizona Cardinals	| KAN -6	| ARI | KAN |
-|Green Bay Packers at Minnesota Vikings	| GB -1.5	| MIN | MIN |
-|Las Vegas Raiders at Los Angeles Chargers	| LA -3	| LAC | LAC |
-|New York Giants at Tennessee Titans	| TEN -5.5	| TEN | NYG |
-|Tampa Bay Buccaneers at Dallas Cowboys	| TB -2.5	| TB | TB |
-|Denver Broncos at Seattle Seahawks	| DEN -6.5	| DEN | SEA |
-
-### week 2:
-| Game | Spread | My Pick | Result |
-| --- | --- | --- | --- |
-Miami Dolphins at Baltimore Ravens | BAL -3.5| My Pick | Result |
-New York Jets at Cleveland Browns | CLE -6.5| My Pick | Result |
-Washington Commanders at Detroit Lions | DET -0.5| My Pick | Result |
-Indianapolis Colts at Jacksonville Jaguars | IND -3.5| My Pick | Result |
-Tampa Bay Buccaneers at New Orleans Saints | TB -2.5| My Pick | Result |
-Carolina Panthers at New York Giants | CAR -1.5| My Pick | Result |
-New England Patriots at Pittsburgh Steelers | NE -2.5| My Pick | Result |
-Atlanta Falcons at Los Angeles Rams | LAR -9.5| My Pick | Result |
-Seattle Seahawks at San Francisco 49ers | SF -8.5| My Pick | Result |
-Cincinnati Bengals at Dallas Cowboys | CIN -6.5| My Pick | Result |
-Houston Texans at Denver Broncos | DEN -10.5| My Pick | Result |
-Arizona Cardinals at Las Vegas Raiders | LV -5.5| My Pick | Result |
-Chicago Bears at Green Bay Packers | GB -10.5| My Pick | Result |
-Tennessee Titans at Buffalo Bills | BUF -9.5| My Pick | Result |
-Minnesota Vikings vs. Philadelphia Eagles | PHI -2.5| My Pick | Result |
-
-### week 3: 
-| Game | Spread | My Pick | Result |
-| --- | --- | --- | --- |
-Pittsburgh Steelers at Cleveland Browns | CLE -3.5 | My Pick | Result |
-New Orleans Saints at Carolina Panthers | NO -2.5 | My Pick | Result |
-Houston Texans at Chicago Bears | CHI -2.5 | My Pick | Result |
-Kansas City Chiefs at Indianapolis Colts | KC -5.5 | My Pick | Result |
-Buffalo Bills at Miami Dolphins |BUF -4.5 | My Pick | Result |
-Detroit Lions at Minnesota Vikings | MIN -6.5 | My Pick | Result |
-Baltimore Ravens at New England Patriots | BAL -2.5 | My Pick | Result |
-Cincinnati Bengals at New York Jets |CIN -6.5 | My Pick | Result |
-Las Vegas Raiders at Tennessee Titans | LV -1.5 | My Pick | Result |
-Philadelphia Eagles at Washington Commanders | PHI -6.5 | My Pick | Result |
-Jacksonville Jaguars at Los Angeles Chargers | LAC -3.5 | My Pick | Result | 
-Los Angeles Rams at Arizona Cardinals | LAR -3.5 | My Pick | Result |
-Atlanta Falcons at Seattle Seahawks | SEA -1.5 | My Pick | Result |
-Green Bay Packers at Tampa Bay Buccaneers |TB -1.5 | My Pick | Result |
-San Francisco 49ers at Denver Broncos | SF -1.5 | My Pick | Result |
-Dallas Cowboys at New York Giants | NYG -0.5 | My Pick | Result |
-
-
-### week 4:
-| Game | Spread | My Pick | Result |
-| --- | --- | --- | --- |
-
-### week 5:
-| Game | Spread | My Pick | Result |
-| --- | --- | --- | --- |
+|PHI @ HOU | PHI -14 | PHI | W |
+LAC @ ATL | LAC -4.5 | LAC | W |
+BUF @ NYJ | BUF -10.5 | BUF | L |
+CAR @ CIN | CIN -7 | CIN | W |
+MIA @ CHI | MIA -4 | MIA | W |
+GB @ DET | GB -4 | GB | L |
+IND @ NE | NE -5 | NE | W |
+LV @ JAC | LV -2.5 | LV | L |
+MIN @ WAS | MIN -3 | MIN | W |
+SEA @ ARI | ARI -2 | SEA | W |
+LAR @ TB | TB - 3 | TB | W |
+TEN @ KC | KC -14 | KC | ? |
+BAL @ NO | BAL -1.5 | BAL | ? |
