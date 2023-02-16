@@ -1,4 +1,6 @@
-# pickems
+# NFL Pickems
+### 2022 season: 173 of 271 correct (63.8%)
+
 Small python project that helps determine my football picks and (hopefully) win my family pick'em league. Utilizes a free sports odds API, Twilio's SMS service & GitHub actions (w/ GitHub Secrets) to text me my picks every Wednesday night & Sunday morning.
 
 ## my strategy:
@@ -15,20 +17,22 @@ per month. This is more than enough for my purpose as I query data ~3 times a we
 
 * Finally in order to run my python script, I setup a simple [GitHub Actions workflow](https://docs.github.com/en/actions/using-workflows/about-workflows) that will be triggered on certain days (I run my script every Wednesday night, Sunday morning, and Monday afternoon). This of course required me to put my repo on Github so in order to keep my private info secure (i.e. API keys, phone number, etc.) I utilized [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) to store these values. When my workflow runs, it can retrieve these secrets from the workflow environment without revealing them to observers.
 
-### 2022 season: 84-49-1
-### this week (week 9): 8-3
+### this week (week 18): 11-5
 | Game | Spread | My Pick | Result |
 | --- | --- | --- | --- |
-|PHI @ HOU | PHI -14 | PHI | W |
-LAC @ ATL | LAC -4.5 | LAC | W |
-BUF @ NYJ | BUF -10.5 | BUF | L |
-CAR @ CIN | CIN -7 | CIN | W |
-MIA @ CHI | MIA -4 | MIA | W |
-GB @ DET | GB -4 | GB | L |
-IND @ NE | NE -5 | NE | W |
-LV @ JAC | LV -2.5 | LV | L |
-MIN @ WAS | MIN -3 | MIN | W |
-SEA @ ARI | ARI -2 | SEA | W |
-LAR @ TB | TB - 3 | TB | W |
-TEN @ KC | KC -14 | KC | ? |
-BAL @ NO | BAL -1.5 | BAL | ? |
+KC @ LV | KC -8.5 | KC | W | 
+TEN @ JAC | JAC -6 | JAC | W |
+TB @ ATL | ATL -4 | ATL | W |
+BAL @ CIN | CIN -7 | CIN | W |
+NE @ BUF | BUF -7 | BUF | W | 
+CAR @ NO | NO -3.5 | NO | L |
+MIN @ CHI | MIN -7.5 | MIN | W | 
+CLE @ PIT | PIT -2.5 | PIT | W | 
+HOU @ IND | IND -2.5 | IND | L |
+NYJ @ MIA | NYJ -1| MIA | W |
+ARI @ SF | SF -14 | SF | W |
+DAL @ WAS | DAL -8 | DAL | L | 
+LAC @ DEN | DEN -2 | LAC | L | 
+LAR @ SEA | SEA -6.5 | SEA | W |
+NYG @ PHI | PHI -14 | PHI | W |
+DET @ GB | GB -4.5 | GB | L |
